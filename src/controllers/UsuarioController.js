@@ -1,4 +1,4 @@
-import Usuarios from "../models/usuariosModel";
+import usuarios from "../models/usuariosModel.js";
 
 const UsuarioController = (app, db) => {
   app.get("/", (request, response) => {
@@ -6,11 +6,7 @@ const UsuarioController = (app, db) => {
 
     new Promise((resolve, reject) => {
       db.all(SQL, (erro, rows) => {
-        if (!erro) {
-          resolve(rows);
-        } else {
-          reject(erro);
-        }
+          !erro ? resolve(rows) : reject(erro);
       });
     })
       .then((result) => response.json(result))
@@ -20,7 +16,7 @@ const UsuarioController = (app, db) => {
   app.post("/", (request, response) => {
     const SQL = `INSERT INTO Usuarios(id, nome, email, senha) VALUES (?,?,?,?)`;
 
-    const novoUsuario = new Usuarios(
+    const novoUsuario = new usuarios(
       request.body.nome,
       request.body.email,
       request.body.senha

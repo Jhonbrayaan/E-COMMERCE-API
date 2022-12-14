@@ -16,9 +16,9 @@ function enableForeignKey() {
 const Usuarios_SCHEMA = `
 CREATE TABLE Usuarios (
     id INT(50) PRIMARY KEY,
-    nome VARCHAR(80),
-    email VARCHAR(80),
-    senha VARCHAR(100)
+    nome VARCHAR(50),
+    email VARCHAR(50),
+    senha VARCHAR(50)
 )`;
 
 function CreateTableUsuarios() {
@@ -31,9 +31,9 @@ function CreateTableUsuarios() {
 const Carrinho_SCHEMA = `
 CREATE TABLE Carrinho (
     id INT(50) PRIMARY KEY,
-    usuario_id INT(80),
-    produto_id INT(80),
-    status VARCHAR(100)
+    usuario_id INT(50),
+    produto_id INT(50),
+    status VARCHAR(50)
 )`;
 
 function CreateTableCarrinho() {
@@ -46,9 +46,9 @@ function CreateTableCarrinho() {
 const Produto_SCHEMA = `
 CREATE TABLE Produto (
     id INT(50) PRIMARY KEY,
-    titulo VARCHAR(80),
-    descricao VARCHAR(80),
-    valor FLOAT(100)
+    titulo VARCHAR(50),
+    descricao VARCHAR(50),
+    valor FLOAT(50)
 )`;
 
 function CreateTableProduto() {

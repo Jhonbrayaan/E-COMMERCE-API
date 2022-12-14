@@ -1,4 +1,4 @@
-import Carrinho from "../models/carrinhoModel";
+import Carrinho from "../models/carrinhoModel.js";
 
 const CarrinhoController = (app, db) => {
   app.get("/", (request, response) => {
@@ -20,9 +20,9 @@ const CarrinhoController = (app, db) => {
   app.get("/:id", (request, response) => {});
 
   app.post("/", (request, response) => {
-    const SQL = `INSERT INTO Produtos(id, usuario_id, produto_id, status) VALUES (?,?,?,?)`;
+    const SQL = `INSERT INTO Carrinho(id, usuario_id, produto_id, status) VALUES (?,?,?,?)`;
 
-    const Produto = new Produto(
+    const carrinho = new Carrinho(
       request.body.usuario_id,
       request.body.produto_id,
       request.body.status

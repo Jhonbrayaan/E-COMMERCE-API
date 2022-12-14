@@ -8,6 +8,13 @@ middlewaresPadrao(app, Express, cors);
 
 import db from "./database/sqlite.js"
 
-indexController(app, db);
+CarrinhoController(app, db);
+ProdutoController(app, db);
+UsuarioController(app, db);
+
+import CarrinhoController from "./controllers/CarrinhoController.js";
+import ProdutoController from "./controllers/ProdutoController.js";
+import UsuarioController from "./controllers/UsuarioController.js";
+
 
 export default app;

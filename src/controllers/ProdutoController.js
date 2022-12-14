@@ -1,4 +1,4 @@
-import Produtos from "../models/produtoModel";
+import Produtos from "../models/produtoModel.js";
 
 const ProdutoController = (app, db) => {
   app.get("/", (request, response) => {
@@ -22,7 +22,7 @@ const ProdutoController = (app, db) => {
   app.post("/", (request, response) => {
     const SQL = `INSERT INTO Produtos(id, titulo, descricao, valor) VALUES (?,?,?,?)`;
 
-    const Produto = new Produto(
+    const produto = new produto(
       request.body.titulo,
       request.body.descricao,
       request.body.valor
